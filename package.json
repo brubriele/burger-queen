@@ -1,0 +1,19 @@
+{
+  "name": "burger-queen",
+  "version": "1.0.0",
+  "description": "* [1. Preâmbulo](#1-preâmbulo)\r * [2. Resumo do projeto](#2-resumo-do-projeto)\r * [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)\r * [4. Considerações gerais](#4-considerações-gerais)\r * [5. Critérios de aceitação mínima do\r   projeto](#5-critérios-de-aceitação-mínima-do-projeto)\r * [6. Dicas e leituras complementares](#7-dicas-e-leituras-complementares)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brubriele/burger-queen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brubriele/burger-queen/issues"
+  },
+  "homepage": "https://github.com/brubriele/burger-queen#readme"
+}
