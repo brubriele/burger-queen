@@ -17,13 +17,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>#partiuBurgerQueen</h1>
+          <h1>#partiuBurgerQueen??</h1>
         </header>
         <Router>
           <div>
             {/* <Route exact path="/" component={Home} /> */}
             {/* <Route exact path="/login" component={Login} /> */}
-            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/src" component={SignUp} />
           </div>
         </Router>
       </div>
