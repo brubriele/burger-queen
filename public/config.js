@@ -1,11 +1,11 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyBeFO04cLk_1NV7gp4ZUmQ5-wgjOuMXwWk",
-    authDomain: "burguer-queen-lab.firebaseapp.com",
-    databaseURL: "https://burguer-queen-lab.firebaseio.com",
-    projectId: "burguer-queen-lab",
-    storageBucket: "burguer-queen-lab.appspot.com",
-    messagingSenderId: "979868558919",
-    appId: "1:979868558919:web:523d4330ee75b59a"
-  };
+  apiKey: "AIzaSyAy6EXo1Oi9mPU84EP5ciFKAt-QewXPxU4",
+  authDomain: "burger-queen-373cb.firebaseapp.com",
+  databaseURL: "https://burger-queen-373cb.firebaseio.com",
+  projectId: "burger-queen-373cb",
+  storageBucket: "burger-queen-373cb.appspot.com",
+  messagingSenderId: "828402851688",
+  appId: "1:828402851688:web:3cfbc91a0acb6a75"
+};
   
-  firebase.initializeApp(firebaseConfig);
+ const database =  firebase.initializeApp(firebaseConfig);
