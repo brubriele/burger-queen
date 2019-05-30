@@ -9,6 +9,8 @@ import imgBanner from './assets/img/burger_queen_gif.gif'
 import iconSaloon from './assets/img/pedidos-pic-salao.png'
 import iconKitchen from './assets/img/kitchen-pic.png'
 
+const database = firebase.firestore()
+
 
 
 class App extends React.Component {
