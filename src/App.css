@@ -23,6 +23,18 @@
   color: #61dafb;
 }
 
+.App-menu-container * {
+  width: 30%;
+  padding: 1em;
+  opacity: 5;
+  cursor: pointer;
+
+}
+
+.App-menu-container *:hover {
+  width: 40%;
+
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
