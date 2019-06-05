@@ -1,46 +1,52 @@
 import React from 'react';
-import './App.css';
-import firebase from "./firebaseConfig";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-// import Login from "./Login";
-import SignUp from "./components/SignUp";
-// import Home from "./Home";
-import imgBanner from './assets/img/burger_queen_gif.gif'
-import iconSaloon from './assets/img/pedidos-pic-salao.png'
-import iconKitchen from './assets/img/kitchen-pic.png'
+import Button from './components/Button'
+import firebase from './firebaseConfig';
+import withFirebaseAuth from 'react-with-firebase-auth';
 
-const database = firebase.firestore()
+const firebaseAppAuth = firebase.auth();
 
-
-
-class App extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      email: "",
+      senha: "",
+    };
+  }
+
+  handleChange = (event, element) => {
+    const newState = this.state;
+    newState[element] = event.target.value
+    this.setState(newState);
+  }
+
+  createUser = () => {
+    this.props.createUserWithEmailAndPassword(this.state.email, this.state.senha);
+  }
+
+  signIn = () => {
+    this.props.signInWithEmailAndPassword(this.state.email, this.state.senha)
+      .then(() => {
+        alert("uhul");
+      });
   }
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1>#partiuBurgerQueen??</h1>
-          <img src={imgBanner} alt="Logo" />
-          <div className="App-menu-container">
-            <img src={iconSaloon} alt="Logo" />
-            <img src={iconKitchen} alt="Logo" />
-          </div>
-          <Router>
-            <div>
-              <Route exact path="/signup" component={SignUp} />
-            </div>
-          </Router>
-        </header>
-
+      <div>
+        <input value={this.state.email}
+          placeholder="email"
+          onChange={(e) => this.handleChange(e, "email")} />
+        <input value={this.state.senha}
+          placeholder="senha"
+          onChange={(e) => this.handleChange(e, "senha")} />
+        <Button text="criar usuário" onClick={this.createUser} />
+        <Button text="loga com usuario" onClick={this.signIn} />
       </div>
-
-
-    );
+    )
   }
 }
 
-export default App;
+export default withFirebaseAuth({
+  firebaseAppAuth,
+})(Home);
