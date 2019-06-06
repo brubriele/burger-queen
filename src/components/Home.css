@@ -1,0 +1,9 @@
+.Home-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.Home-form * {
+    padding: 5px;
+    margin: 0 auto;
+}

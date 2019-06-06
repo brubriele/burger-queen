@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button'
+import './Home.css';
 import firebase from '../firebaseConfig';
 import withFirebaseAuth from 'react-with-firebase-auth';
 
@@ -33,16 +34,19 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
-        
+      <div className="Home-form">
+
         <input value={this.state.email}
           placeholder="email"
           onChange={(e) => this.handleChange(e, "email")} />
         <input value={this.state.senha}
           placeholder="senha"
           onChange={(e) => this.handleChange(e, "senha")} />
-        <Button text="criar usuário" onClick={this.createUser} />
-        <Button text="loga com usuario" onClick={this.signIn} />
+        <div>
+          <Button text="Entrar" onClick={this.signIn} />
+          <Button text="Novo Usuário" onClick={this.createUser} />
+        </div>
+
       </div>
     )
   }
