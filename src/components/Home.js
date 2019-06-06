@@ -42,6 +42,13 @@ class Home extends React.Component {
         <input value={this.state.senha}
           placeholder="senha"
           onChange={(e) => this.handleChange(e, "senha")} />
+        <div className="select">
+          <select name="slct" id="slct">
+            <option selected disabled>Escolha seu perfil:</option>
+            <option value="1">Salão</option>
+            <option value="2">Cozinha</option>
+          </select>
+        </div>
         <div>
           <Button text="Entrar" onClick={this.signIn} />
           <Button text="Novo Usuário" onClick={this.createUser} />
