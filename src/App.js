@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Saloon from "./components/Saloon";
 
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -13,16 +14,18 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <Home />
-          <Router>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            {/* <Home /> */}
             <div>
-              <Route exact path="/Saloon" component={Saloon} />
+              <Route path="/" exact component={Home} />
+              <Route path="/saloon" exact component={Saloon} />
             </div>
-          </Router>
-        </header>
-      </div>
+
+          </header>
+        </div>
+      </Router>
     );
   }
 }
