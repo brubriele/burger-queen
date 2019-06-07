@@ -16,14 +16,18 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App">
+
           <header className="App-header">
-            {/* <Home /> */}
-            <div>
+
+            <section className="App-form">
               <Route path="/" exact component={Home} />
+            </section>
+            <section>
               <Route path="/saloon" exact component={Saloon} />
-            </div>
+            </section>
 
           </header>
+
         </div>
       </Router>
     );
