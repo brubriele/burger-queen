@@ -34,7 +34,8 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="Home-form">
+      <div className="Home-header">
+        
 
         <input value={this.state.email}
           placeholder="email"

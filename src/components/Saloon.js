@@ -24,7 +24,8 @@ class Saloon extends React.Component {
 
     render() {
         return (
-            <div className="btn">
+            <div className="Pannel-header">
+                    
                 <button className="button-success pure-button">Menu Cofee</button>
                 <button className="button-success pure-button">Menu Snacks</button>
                 <div className="btn">

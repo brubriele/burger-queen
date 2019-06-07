@@ -10,20 +10,7 @@
   min-height: 172vh; */
 }
 
-.App-header {
-  display: flex;
-    background: url(/static/media/logo_gif.868f58a7.gif) no-repeat;
-    background-size: contain;
-    /* box-shadow: inset 0 0 5px 2px; */
-    background-attachment: fixed;
-    background-color: #1A8FE3;
-    min-height: 172vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    opacity: 0.8;
-}
+
 
 .App-link {
   color: #61dafb;

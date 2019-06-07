@@ -18,12 +18,13 @@ class App extends React.Component {
         <div className="App">
 
           <header className="App-header">
+          <Route path="/saloon" exact component={Saloon} />
 
             <section className="App-form">
               <Route path="/" exact component={Home} />
             </section>
             <section>
-              <Route path="/saloon" exact component={Saloon} />
+              
             </section>
 
           </header>
