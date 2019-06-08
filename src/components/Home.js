@@ -35,27 +35,28 @@ class Home extends React.Component {
   render() {
     return (
       <div className="Home-header">
-        
+        <div className="teste"></div>
+        <form className="pure-form">
+          <fieldset>
+            <input value={this.state.email} className="pure-form item" onChange={(e) => this.handleChange(e, "email")} type="email" placeholder="Email" />
+            <input value={this.state.senha}
+              placeholder="senha"
+              onChange={(e) => this.handleChange(e, "senha")} className="pure-form item" type="password" placeholder="Senha" />
 
-        <input value={this.state.email}
-          placeholder="email"
-          onChange={(e) => this.handleChange(e, "email")} />
-        <input value={this.state.senha}
-          placeholder="senha"
-          onChange={(e) => this.handleChange(e, "senha")} />
-        <div className="select">
-          <select name="slct" id="slct">
-            <option selected disabled>Escolha seu perfil:</option>
-            <option value="1">Salão</option>
-            <option value="2">Cozinha</option>
-          </select>
-        </div>
-        <div>
-          <Button text="Entrar" onClick={this.signIn} />
-          <Button text="Novo Usuário" onClick={this.createUser} />
-        </div>
+            <label for="remember" />
+            <input id="option-two" type="radio" name="optionsRadios" value="option1" /> Salão
+            <label for="remember" />
+            <input id="option-three" type="radio" name="optionsRadios" value="option2" /> Cozinha
+
+        <button text="Entrar" onClick={this.signIn} className="button-warning pure-button">Entrar</button>
+            <button text="Novo Usuário" onClick={this.createUser} className="button-warning pure-button">Cadastrar</button>
+          </fieldset>
+        </form>
+
+
 
       </div>
+
     )
   }
 }
