@@ -36,7 +36,6 @@ class Home extends React.Component {
     return (
 
       <div className="Home-header">
-        <div className="Home-header">
 
 
           <div className="dashboard">
@@ -71,9 +70,6 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
-
-
-      </div>
 
 
     )
