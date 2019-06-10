@@ -6,6 +6,8 @@
 .Home-form * {
     padding: 5px;
     margin: 0 auto;
+    background-color: antiquewhite;
+  
 }
 
 .Home-header {
@@ -20,37 +22,7 @@
       justify-content: center;
       opacity: 0.8;
   }
-
-  /* .item {
-      width: 50%
-  } */
-
-  .pure-form * {
-      margin: 2px;
-  }
-
-  fieldset {
-      display: flex;
-      background-color: #1A8FE3;
-  }
-
-
-
-  /* .teste {
-    display: flex;
-    background: url(../assets/img/foto_logo.jpg) no-repeat;
-    background-size: contain;
-    background-attachment: fixed;
-    background-color: #1A8FE3;
-    min-height: 90vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    opacity: 0.8;
-  } */
-
-
-
+  
   .dashboard {
     display: grid;
     grid-template-columns: 300px 1fr 1fr 1fr;
@@ -68,8 +40,6 @@
     grid-column: 2 / span 3;
   }
   .dashboard-card {
-    background: #1A8FE3;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
     padding: 10px;
     margin: 10px;
     text-align: center;
@@ -94,38 +64,5 @@
     }
   }
   
-  /* Fonts and colors */
-  .dashboard h2 {
-    font-size: 25px;
-  }
-  .dashboard h3 {
-    color: #37B686;
-    font-size: 25px;
-    margin-bottom: 15px;
-  }
-  .dashboard p {
-    color: rgba(0,0,0,0.5);
-    font-size: 16px;
-  }
-  .dashboard img {
-    border-radius: 50%;
-  }
-  .dashboard .btn {
-    border-radius: 5px;
-    border: none;
-    width: 100%;
-    margin-top: 30px;
-    background: #37B686;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 15px 20px;
-  }
-  .dashboard .btn:hover {
-    background: #37B686;
-    opacity: 0.7;
-  }
-  .main p {
-    margin-bottom: 30px;
-  }
+ 
   
