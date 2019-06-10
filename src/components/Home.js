@@ -3,6 +3,8 @@ import Button from './Button'
 import './Home.css';
 import firebase from '../firebaseConfig';
 import withFirebaseAuth from 'react-with-firebase-auth';
+import RegisterBox from "../components/RegisterBox";
+import LoginBox from "../components/LoginBox";
 
 const firebaseAppAuth = firebase.auth();
 
@@ -32,21 +34,42 @@ class Home extends React.Component {
       });
   }
 
+  showLoginBox() {
+    this.setState({isLoginOpen: true, isRegisterOpen: false});
+  }
+
+  showRegisterBox() {
+    this.setState({isRegisterOpen: true, isLoginOpen: false});
+  }
+
   render() {
     return (
       <div className="Home-form">
-
-        <input value={this.state.email}
-          placeholder="email"
-          onChange={(e) => this.handleChange(e, "email")} />
-        <input value={this.state.senha}
-          placeholder="senha"
-          onChange={(e) => this.handleChange(e, "senha")} />
-        <div>
-          <Button text="Entrar" onClick={this.signIn} />
-          <Button text="Novo Usuário" onClick={this.createUser} />
+        <div className="box-container">
+          {this.state.isLoginOpen && <LoginBox />}
+          {this.state.isRegisterOpen && <RegisterBox />}
         </div>
 
+        <div className="box-controller">
+          <div
+            className={"controller " + (this.state.isLoginOpen
+              ? "selected-controller"
+              : "")}
+            onClick={this
+              .showLoginBox
+              .bind(this)}>
+            Login
+       </div>
+          <div
+            className={"controller " + (this.state.isRegisterOpen
+              ? "selected-controller"
+              : "")}
+            onClick={this
+              .showRegisterBox
+              .bind(this)}>
+            Register
+       </div>
+        </div>
       </div>
     )
   }
