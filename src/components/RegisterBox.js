@@ -3,6 +3,8 @@ import './FormBoxStyle.css';
 import firebase from '../firebaseConfig';
 import withFirebaseAuth from 'react-with-firebase-auth';
 const firebaseAppAuth = firebase.auth();
+const database = firebase.firestore();
+
 
 
 class RegisterBox extends React.Component {
@@ -24,10 +26,20 @@ class RegisterBox extends React.Component {
     }
 
     createUser = () => {
-        this.props.createUserWithEmailAndPassword(this.state.email, this.state.senha);
+        this.props.createUserWithEmailAndPassword(this.state.email, this.state.senha)
+            .then((resp) => {
+                database.collection('burger-queen-users').doc(resp.user.uid).set({
+                    email: this.state.email,
+                    nome: this.state.nome,
+                    tipo: this.state.tipo
+                });
+                
+                return this.props.history.push('/' + this.state.tipo)
+            });
     }
 
     render() {
+        console.log(this.state)
         return (
             <div className="inner-container">
                 <div className="header">
@@ -63,7 +75,7 @@ class RegisterBox extends React.Component {
 
                         <select onChange={(e) => this.handleChange(e, "tipo")}>
                             <option value="">--selecione--</option>
-                            <option>SALÃO</option>
+                            <option value="Saloon">SALÃO</option>
                             <option>COZINHA</option>
                         </select>
                     </div>

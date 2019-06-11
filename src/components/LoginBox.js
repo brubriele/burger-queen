@@ -10,7 +10,7 @@ class LoginBox extends React.Component {
         super(props);
         this.state = {
             email: "",
-            senha: "",
+            senha: ""
         };
     }
 
@@ -23,7 +23,8 @@ class LoginBox extends React.Component {
 
     signIn = () => {
         this.props.signInWithEmailAndPassword(this.state.email, this.state.senha)
-          .then(() => {
+          .then((resp) => {
+            //   firestore.response.data()
             alert("uhul");
           });
       }

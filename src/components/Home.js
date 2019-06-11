@@ -10,27 +10,7 @@ const firebaseAppAuth = firebase.auth();
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      email: "",
-      senha: "",
-    };
-  }
-
-  handleChange = (event, element) => {
-    const newState = this.state;
-    newState[element] = event.target.value
-    this.setState(newState);
-  }
-
-  createUser = () => {
-    this.props.createUserWithEmailAndPassword(this.state.email, this.state.senha);
-  }
-
-  signIn = () => {
-    this.props.signInWithEmailAndPassword(this.state.email, this.state.senha)
-      .then(() => {
-        alert("uhul");
-      });
+    this.state = {};
   }
 
   showLoginBox() {
