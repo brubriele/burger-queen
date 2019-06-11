@@ -6,7 +6,6 @@ import RegisterBox from "../components/RegisterBox";
 import LoginBox from "../components/LoginBox";
 const firebaseAppAuth = firebase.auth();
 
-
 class Home extends React.Component {
   constructor(props) {
     super(props);
