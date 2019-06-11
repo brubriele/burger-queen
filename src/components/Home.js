@@ -4,7 +4,6 @@ import firebase from '../firebaseConfig';
 import withFirebaseAuth from 'react-with-firebase-auth';
 import RegisterBox from "../components/RegisterBox";
 import LoginBox from "../components/LoginBox";
-
 const firebaseAppAuth = firebase.auth();
 
 class Home extends React.Component {
