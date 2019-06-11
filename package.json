@@ -16,7 +16,8 @@
     "react-scripts": "3.0.1",
     "react-switch": "^5.0.0",
     "react-transition-group": "^4.1.0",
-    "react-with-firebase-auth": "^1.0.3"
+    "react-with-firebase-auth": "^1.0.3",
+    "recompose": "^0.30.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,11 +1,11 @@
 import React from 'react';
+import { compose} from 'recompose';
+import { withRouter } from "react-router-dom";
 import './FormBoxStyle.css';
 import firebase from '../firebaseConfig';
 import withFirebaseAuth from 'react-with-firebase-auth';
 const firebaseAppAuth = firebase.auth();
 const database = firebase.firestore();
-
-
 
 class RegisterBox extends React.Component {
 
@@ -27,14 +27,16 @@ class RegisterBox extends React.Component {
 
     createUser = () => {
         this.props.createUserWithEmailAndPassword(this.state.email, this.state.senha)
-            .then((resp) => {
+            .then(resp => {
                 database.collection('burger-queen-users').doc(resp.user.uid).set({
                     email: this.state.email,
                     nome: this.state.nome,
                     tipo: this.state.tipo
+                })
+                .then (() => {
+                    console.log(this.state.tipo)
+                    this.props.history.push(`/${this.state.tipo}`);
                 });
-                
-                return this.props.history.push('/' + this.state.tipo)
             });
     }
 
@@ -75,7 +77,7 @@ class RegisterBox extends React.Component {
 
                         <select onChange={(e) => this.handleChange(e, "tipo")}>
                             <option value="">--selecione--</option>
-                            <option value="Saloon">SALÃO</option>
+                            <option value="saloon">SALÃO</option>
                             <option>COZINHA</option>
                         </select>
                     </div>
@@ -90,7 +92,9 @@ class RegisterBox extends React.Component {
     }
 }
 
-
-export default withFirebaseAuth({
-    firebaseAppAuth,
-})(RegisterBox);
+export default compose (
+    withFirebaseAuth({
+        firebaseAppAuth,
+    }),
+    withRouter,
+)(RegisterBox);

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Saloon from "./components/Saloon";
 
@@ -10,15 +10,8 @@ function App() {
       <div className="App">
 
         <header className="App-header">
-          <Route path="/saloon" exact component={Saloon} />
-
-          <section className="App-form">
-            <Route path="/" exact component={Home} />
-          </section>
-          <section>
-
-          </section>
-
+          <Route path="/" exact component={Home} />
+          <Route path="/saloon" component={Saloon} />
         </header>
 
       </div>
