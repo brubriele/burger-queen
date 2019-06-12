@@ -10,7 +10,8 @@ class LoginBox extends React.Component {
         super(props);
         this.state = {
             email: "",
-            senha: ""
+            senha: "", 
+            tipo: 'kitchen'
         };
     }
 
@@ -24,7 +25,9 @@ class LoginBox extends React.Component {
     signIn = () => {
         this.props.signInWithEmailAndPassword(this.state.email, this.state.senha)
           .then((resp) => {
-            //   firestore.response.data()
+           const id = resp.user.uid
+           const  db = firebase.firestore();
+           console.log(id, db.collection('burger-queen-users').doc(id).tipo)
             alert("uhul");
           });
       }
@@ -39,7 +42,7 @@ class LoginBox extends React.Component {
                 <div className="box">
 
                     <div className="input-group">
-                        <label htmlFor="username">Username</label>
+                        <label htmlFor="username">E-mail</label>
                         <input value={this.state.email}
                             type="text"
                             name="username"

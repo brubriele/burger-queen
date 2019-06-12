@@ -25,15 +25,13 @@
 
 .Pannel-header {
     display: flex;
-      background: url(../assets/img/foto_logo_pannel.jpg) no-repeat;
+      background: url(../assets/img/foto_logo.jpg) no-repeat;
       background-size: contain;
-      /* box-shadow: inset 0 0 5px 2px; */
       background-attachment: fixed;
-      background-color: #1A8FE3;
-	  min-height: 100vh;
-	  flex-direction: column;
-	  align-items: center;
-	  justify-content: flex-end;
-	  /* font-size: calc(10px + 2vmin); */
-	  opacity: 0.8;
+      background-color: #EA3546;
+      min-height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.8;
   }
