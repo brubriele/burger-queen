@@ -23,10 +23,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="Home-header">
-        <div className="dashboard">
-          <div className="dashboard-card main">
-            <div className="dashboard-card-content">
-              <div className="Home-form">
+        <div className="container-form">
                 <div className="box-container">
                   {this.state.isLoginOpen && <LoginBox />}
                   {this.state.isRegisterOpen && <RegisterBox />}
@@ -55,12 +52,6 @@ class Home extends React.Component {
               </div>
 
             </div>
-
-          </div>
-        </div>
-      </div>
-
-
 
     )
   }
