@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import './FormBoxStyle.css';
 import firebase from '../firebaseConfig';
 import withFirebaseAuth from 'react-with-firebase-auth';
+import { error } from 'util';
 const firebaseAppAuth = firebase.auth();
 const database = firebase.firestore();
 
@@ -36,7 +37,10 @@ class RegisterBox extends React.Component {
                 .then (() => {
                     console.log(this.state.tipo)
                     this.props.history.push(`/${this.state.tipo}`);
-                });
+                })
+                .catch((resp) => {
+                    console.log(resp.error)
+                })
             });
     }
 

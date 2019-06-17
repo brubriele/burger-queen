@@ -2,7 +2,10 @@ import React from 'react';
 import './FormBoxStyle.css';
 import firebase from '../firebaseConfig';
 import withFirebaseAuth from 'react-with-firebase-auth';
+import { withRouter } from "react-router-dom";
+import { compose} from 'recompose';
 const firebaseAppAuth = firebase.auth();
+const  db = firebase.firestore();
 
 class LoginBox extends React.Component {
 
@@ -10,8 +13,7 @@ class LoginBox extends React.Component {
         super(props);
         this.state = {
             email: "",
-            senha: "", 
-            tipo: 'kitchen'
+            senha: ""
         };
     }
 
@@ -26,8 +28,13 @@ class LoginBox extends React.Component {
         this.props.signInWithEmailAndPassword(this.state.email, this.state.senha)
           .then((resp) => {
            const id = resp.user.uid
-           const  db = firebase.firestore();
-           console.log(id, db.collection('burger-queen-users').doc(id).tipo)
+           db.collection('burger-queen-users').doc(id).get()
+            .then(resp => {
+                this.props.history.push(`/${resp.data().tipo}`);
+                console.log('aqui')
+                console.log(resp.data().tipo)
+                // `/${this.state.tipo}`
+            })
             alert("uhul");
           });
       }
@@ -70,6 +77,10 @@ class LoginBox extends React.Component {
 
 }
 
-export default withFirebaseAuth({
-    firebaseAppAuth,
-})(LoginBox);
+
+export default compose (
+    withFirebaseAuth({
+        firebaseAppAuth,
+    }),
+    withRouter,
+)(LoginBox);

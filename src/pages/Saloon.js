@@ -25,85 +25,31 @@ class Saloon extends React.Component {
     render() {
         return (
             <div className="Pannel-header">
-                <div className="pure-g">
-                    <div className="pure-u-1-2">
-                    <button className="button-success pure-button">Café da Manhã</button>
-                <button className="button-success pure-button">Diário</button>
-                        <table class="pure-table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Make</th>
-                                    <th>Model</th>
-                                    <th>Year</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Honda</td>
-                                    <td>Accord</td>
-                                    <td>2009</td>
-                                </tr>
-
-                                <tr>
-                                    <td>2</td>
-                                    <td>Toyota</td>
-                                    <td>Camry</td>
-                                    <td>2012</td>
-                                </tr>
-
-                                <tr>
-                                    <td>3</td>
-                                    <td>Hyundai</td>
-                                    <td>Elantra</td>
-                                    <td>2010</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div className="pure-u-1-2"><p>Thirds</p>
-                        <table class="pure-table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Make</th>
-                                    <th>Model</th>
-                                    <th>Year</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Honda</td>
-                                    <td>Accord</td>
-                                    <td>2009</td>
-                                </tr>
-
-                                <tr>
-                                    <td>2</td>
-                                    <td>Toyota</td>
-                                    <td>Camry</td>
-                                    <td>2012</td>
-                                </tr>
-
-                                <tr>
-                                    <td>3</td>
-                                    <td>Hyundai</td>
-                                    <td>Elantra</td>
-                                    <td>2010</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <button className="button-success pure-button">Menu Cofee</button>
-                <button className="button-success pure-button">Menu Snacks</button>
-                <div className="btn">
-                    <button className="button-warning pure-button">Café americano</button>
+                <div class="pc-tab">
+                    <input checked="checked" id="tab1" type="radio" name="pct" />
+                    <input id="tab2" type="radio" name="pct" />
+                    <input id="tab3" type="radio" name="pct" />
+                    <nav>
+                        <ul>
+                            <li class="tab1">
+                                <label for="tab1">Café da Manhã</label>
+                            </li>
+                            <li class="tab2">
+                                <label for="tab2">Lanches</label>
+                            </li>
+                        </ul>
+                    </nav>
+                    <section>
+                        <div class="tab1">
+                            <h2>First</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus itaque quidem minus nostrum, voluptatem accusamus aspernatur quia harum ratione, officia laudantium inventore autem doloribus atque labore numquam non. Hic, animi.</p>
+                        </div>
+                        <div class="tab2">
+                            <h2>Second</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nesciunt ipsum dolore error repellendus officiis aliquid a, vitae reprehenderit, accusantium vero, ad. Obcaecati numquam sapiente cupiditate. Praesentium eaque, quae error!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, maiores.</p>
+                        </div>
+                    </section>
                 </div>
             </div>
         )
