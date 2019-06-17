@@ -53,6 +53,7 @@ class Saloon extends React.Component {
                 </div>
             </div>
         )
+        
     }
 }
 
