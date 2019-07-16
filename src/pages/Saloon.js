@@ -2,17 +2,18 @@ import React from 'react';
 import 'purecss/build/pure.css';
 import './Saloon.css';
 import firebase from '../firebaseConfig';
+import Button from '../components/Button';
 
 const menu = [
     {
         nome: "Café americano",
         preco: 5,
-        período: "manhã"
+        tipo: "manhã"
     },
     {
         nome: "Sanduíche de presunto e queijo",
         preco: 10,
-        período: "manhã"
+        tipo: "manhã"
     },
     {
         nome: "Suco de fruta natural",
@@ -42,22 +43,22 @@ const menu = [
     {
         nome: "Água 500ml",
         preco: 5,
-        tipo: "bebidas"
+        tipo: "diário"
     },
     {
         nome: "Água 750ml",
         preco: 7,
-        tipo: "bebidas"
+        tipo: "diário"
     },
     {
         nome: "Bebida gaseificada 500ml",
         preco: 7,
-        tipo: "bebidas"
+        tipo: "diário"
     },
     {
         nome: "Bebida gaseificada 750ml",
         preco: 10,
-        tipo: "bebidas"
+        tipo: "diário"
     }
 ]
 
@@ -77,12 +78,13 @@ class Saloon extends React.Component {
     }
 
     buyItem = (item) => {
-        
+
     }
 
     render() {
         console.log(this.state.comprar)
         return (
+            <section className="container">
             <div className="Pannel-header">
                 <div className="pc-tab">
                     <input checked="checked" id="tab1" type="radio" name="pct" />
@@ -101,37 +103,38 @@ class Saloon extends React.Component {
                     <section>
                         <div className="tab1">
                             <h2>Café da Manhã</h2>
-                            {
-                                menu.map((menu, i) => {
-                                    return menu.tipo === 'manhã' ?
-                                    <button className="button-xsmall pure-button" key={i} onClick={() => {alert (menu.nome)}}>{menu.nome} <br></br>{'R$' + menu.preco}</button> : false
-                                }) 
-                            }
+                            <div className="tab-content-morning">
+                                {
+                                    menu.map((item, i) => { 
+                                        return item.tipo === 'manhã' ? <Button key={i} text={item.nome} onClick={() => { alert(item.nome) }}/> : false
+                                    })
+                                }
+                            </div>
+
 
 
                         </div>
                         <div className="tab2">
-                            <h2>Menu Diário</h2>
-                            {
-                                menu.map((menu, i) => {
-                                    return menu.tipo === 'diário' ?
-                                    <button className="button-xsmall pure-button" key={i} onClick={() => {alert (menu.nome)}}>{menu.nome} <br></br>{"R$" + menu.preco}</button> : false
-                                }) 
-                            }
+                            <h2>Menu Diário</h2>    
+                            <div className="tab-content-daily"> 
+
+                            </div>
+
                         </div>
                     </section>
                     <section>
-                    <div class="tab1">
+                        <div class="tab1">
                             <h2>Total pedido:</h2>
                         </div>
                     </section>
                     <section>
-                    <div class="tab2">
+                        <div class="tab2">
                             <h2>Total pedido:</h2>
                         </div>
                     </section>
                 </div>
             </div>
+            </section>
         )
 
     }

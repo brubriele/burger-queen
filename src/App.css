@@ -1,13 +1,5 @@
 .App {
   text-align: center;
-  /* display: flex;
-  align-items: center;
-  height: 85vh;
-  background: url(./assets/img/foto_logo.jpg) no-repeat center center;
-  background-size: auto;
-  background-attachment: fixed;
-  background-color: #FFFFFF;
-  min-height: 172vh; */
 }
 
 
@@ -28,11 +20,21 @@
   width: 40%;
 
 }
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: radial-gradient(#e1fa00 7.2%, transparent 0);
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  max-width: 500px;
+  min-width: 250px;
+  background: #3779ac;
+  background-size: 25px 25px;
+  border-radius: 20px;
+  box-shadow: 4px 3px 7px 2px #00000040;
+  padding: 1rem;
+  box-sizing: border-box;
 }

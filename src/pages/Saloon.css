@@ -23,18 +23,12 @@
 	/* this is a light blue */
 }
 
-.Pannel-header {
-    display: flex;
-      background: url(../assets/img/foto_logo.jpg) no-repeat;
-      background-size: contain;
-      background-attachment: fixed;
-      background-color: #EA3546;
-      min-height: 100vh;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.8;
-  }
+.pure-button {
+  margin: 2px;
+  box-sizing: border-box;
+}
+
+
 
 /* Component Needs */
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700);
@@ -110,7 +104,7 @@ h1 {
   clear: both;
 }
 .pc-tab section div {
-  padding: 20px;
+  padding: 10px;
   width: 100%;
   border: 1px solid #ddd;
   background: #fff;
@@ -144,3 +138,31 @@ h1 {
   left: 0;
   bottom: -1px;
 }
+
+/* Grids */
+
+.tab-content-morning {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: 50% 50%;
+  height: calc(100vh - 110px); */
+  padding: 0px;
+  /* box-sizing: border-box; */
+  margin-top: 20px;
+}
+
+.tab-content-daily {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  /* height: calc(100vh - 110px); */
+  padding: 0px;
+  /* box-sizing: border-box; */
+  margin-top: 20px;
+}
+
+
+/* .dashboard .main {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
+} */

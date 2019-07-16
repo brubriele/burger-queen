@@ -1,31 +1,18 @@
 .Home-header {
     display: flex;
-      background: url(../assets/img/foto_logo.jpg) no-repeat;
+      /* background: url(../assets/img/foto_logo.jpg) no-repeat;
       background-size: contain;
       background-attachment: fixed;
-      background-color: #EA3546;
+      background-color: #EA3546; */
       min-height: 100vh;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       opacity: 0.8;
   }
-  
-  .container-form {
-    display: grid;
-    grid-template-columns: 300px 1fr 1fr 1fr;
-    grid-template-rows: 50% 50%;
-    height: calc(10vh - 110px);
-    margin-top: 20px;
-    width: 45%;
-  }
-  .container-form {
-    grid-row: 1 / span 2;
-    grid-column: 1 / span 1;
-  }
-  .container-form {
-    grid-row: 2 / span 1;
-    grid-column: 2 / span 3;
+
+  .imgLogo {
+    width: 30%;
   }
 
   .box-controller, .box-container {

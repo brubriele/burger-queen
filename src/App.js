@@ -7,14 +7,8 @@ import Saloon from "./pages/Saloon";
 function App() {
   return (
     <Router>
-      <div className="App">
-
-        <header className="App-header">
           <Route path="/" exact component={Home} />
           <Route path="/saloon" component={Saloon} />
-        </header>
-
-      </div>
     </Router>
   );
 }
